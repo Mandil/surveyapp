@@ -57,5 +57,14 @@ Rails.application.configure do
 
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
+
+  # In production, :host should be set to the actual host of your application.
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # Ensure you have flash messages in app/views/layouts/application.html.erb.
+     # For example:
+     #
+     #   <p class="notice"><%= notice %></p>
+     #   <p class="alert"><%= alert %></p>
+
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end
